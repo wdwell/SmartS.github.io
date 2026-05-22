@@ -1,0 +1,706 @@
+/* ============================================
+   SmartScan — кастомные стили (mobile-first)
+   ============================================ */
+
+/* --- Поля ввода --- */
+.field-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 0.35rem;
+}
+
+.field-input {
+  display: block;
+  width: 100%;
+  font-size: 1.125rem;
+  line-height: 1.4;
+  padding: 0.75rem 1rem;
+  border: 2px solid #cbd5e1;
+  border-radius: 0.75rem;
+  background: #fff;
+  color: #0f172a;
+  transition: border-color 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.field-input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.field-input::placeholder {
+  color: #94a3b8;
+}
+
+/* --- Аккордеон зон --- */
+.zone-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 1.125rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: left;
+  background: #fff;
+  border: none;
+  border-radius: 1rem 1rem 0 0;
+  color: #0f172a;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 3.5rem;
+}
+
+.zone-header.collapsed-only {
+  border-radius: 1rem;
+}
+
+.zone-card {
+  background: #fff;
+  border: 2px solid #e2e8f0;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.zone-body {
+  border-top: 2px solid #f1f5f9;
+  padding: 0.5rem 0.75rem 0.75rem;
+}
+
+.zone-body[hidden] {
+  display: none;
+}
+
+.zone-chevron {
+  transition: transform 0.2s ease;
+  color: #64748b;
+  font-size: 1.125rem;
+}
+
+.zone-header[aria-expanded="true"] .zone-chevron {
+  transform: rotate(180deg);
+}
+
+/* --- Пункт чек-листа --- */
+.check-item {
+  padding: 0.875rem 0.5rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.check-item:last-child {
+  border-bottom: none;
+}
+
+.check-item-title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: 0.625rem;
+  color: #1e293b;
+}
+
+/* --- Кнопки статуса ОК / Внимание / Ремонт --- */
+.status-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.btn-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.5rem 0.25rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  border: 2px solid #cbd5e1;
+  border-radius: 0.75rem;
+  background: #f8fafc;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.btn-status:active {
+  transform: scale(0.97);
+}
+
+/* Неактивные кнопки при выборе другой */
+.btn-status.dimmed {
+  opacity: 0.35;
+}
+
+.btn-status.active-ok {
+  background: #16a34a;
+  border-color: #15803d;
+  color: #fff;
+  opacity: 1;
+}
+
+.btn-status.active-warn {
+  background: #eab308;
+  border-color: #ca8a04;
+  color: #1e293b;
+  opacity: 1;
+}
+
+.btn-status.active-repair {
+  background: #dc2626;
+  border-color: #b91c1c;
+  color: #fff;
+  opacity: 1;
+}
+
+/* --- Динамический блок уточнения и фото пункта --- */
+.item-extra {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  background: #fffbeb;
+  border: 2px dashed #fcd34d;
+  border-radius: 0.75rem;
+}
+
+.item-extra.repair-theme {
+  background: #fef2f2;
+  border-color: #fca5a5;
+}
+
+.item-extra[hidden] {
+  display: none;
+}
+
+.item-extra-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #92400e;
+  margin-bottom: 0.35rem;
+}
+
+.item-extra.repair-theme .item-extra-label {
+  color: #991b1b;
+}
+
+.comment-input {
+  font-size: 1rem;
+  padding: 0.625rem 0.75rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 0.5rem;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+/* --- Кнопка камеры --- */
+.btn-camera {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 3.25rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1d4ed8;
+  background: #eff6ff;
+  border: 2px solid #93c5fd;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-camera:active {
+  background: #dbeafe;
+}
+
+.btn-camera-sm {
+  min-height: 2.75rem;
+  font-size: 0.875rem;
+  padding: 0.5rem 0.75rem;
+}
+
+/* --- Превью фото (пропорции без обрезки) --- */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+/* Галерея: горизонтальная лента при нескольких фото */
+.photo-grid.is-gallery {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.625rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+  width: 100%;
+}
+
+.photo-grid.is-gallery .photo-thumb {
+  flex: 0 0 72%;
+  max-width: 280px;
+  scroll-snap-align: start;
+}
+
+.photo-gallery-wrap {
+  width: 100%;
+}
+
+.photo-grid-hint {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin: 0 0 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.photo-thumb {
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 2px solid #e2e8f0;
+  background: #f1f5f9;
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.photo-thumb img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 160px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.photo-delete {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  z-index: 2;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(220, 38, 38, 0.92);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 0.875rem;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* --- Полноэкранная галерея --- */
+.photo-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  background: rgba(15, 23, 42, 0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3.5rem 0.75rem 4rem;
+  touch-action: pan-y;
+}
+
+.photo-lightbox.hidden {
+  display: none;
+}
+
+.lightbox-stage {
+  flex: 1;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.lightbox-counter {
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  text-align: center;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 1.25rem;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3rem;
+  height: 3.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 1.25rem;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.lightbox-prev {
+  left: 0.5rem;
+}
+
+.lightbox-next {
+  right: 0.5rem;
+}
+
+.lightbox-nav:disabled {
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+/* --- Кнопка PDF --- */
+.btn-pdf {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  min-height: 3.75rem;
+  padding: 1rem 1.25rem;
+  font-size: 1.0625rem;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.45);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-pdf:active {
+  transform: scale(0.98);
+}
+
+.btn-pdf:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-pdf i {
+  font-size: 1.25rem;
+}
+
+/* --- Toast --- */
+.toast {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  z-index: 100;
+  max-width: 24rem;
+  margin: 0 auto;
+  animation: toastIn 0.35s ease;
+}
+
+.toast.hidden {
+  display: none;
+}
+
+.toast-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem 1.125rem;
+  background: #fff;
+  border: 2px solid #86efac;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.toast-close {
+  margin-left: auto;
+  padding: 0.25rem;
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 1.125rem;
+  cursor: pointer;
+}
+
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   Печатная форма для PDF (скрыта на экране)
+   ============================================ */
+/*
+ * Ширина контента PDF = A4 (210mm) минус поля html2pdf (10mm × 2) = 190mm.
+ * В пикселях (~96dpi) для стабильного захвата canvas на мобильных.
+ */
+:root {
+  --pdf-content-width: 718px;
+}
+
+/* absolute (не fixed!) — иначе при прокрутке страницы canvas смещает шапку вверх */
+.pdf-source {
+  position: absolute;
+  left: -12000px;
+  top: 0;
+  width: var(--pdf-content-width);
+  max-width: var(--pdf-content-width);
+  pointer-events: none;
+  z-index: -1;
+  overflow: visible;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Во время генерации — в начале документа (top: 0), перекрыт оверлеем */
+.pdf-source.is-capturing {
+  left: 0;
+  top: 0;
+  z-index: 99997;
+}
+
+/* Оверлей на время генерации PDF */
+.pdf-generating-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99998;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: rgba(248, 250, 252, 0.97);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.pdf-generating-overlay i {
+  font-size: 2rem;
+  color: #2563eb;
+}
+
+.pdf-report {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  color: #111;
+  background: #fff;
+  width: var(--pdf-content-width);
+  max-width: var(--pdf-content-width);
+  padding: 16px 14px;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+.pdf-report h1 {
+  font-size: 16pt;
+  text-align: center;
+  margin: 0 0 8px;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  word-wrap: break-word;
+}
+
+.pdf-report .pdf-subtitle {
+  text-align: center;
+  font-size: 9pt;
+  color: #555;
+  margin-bottom: 8mm;
+}
+
+.pdf-info-table {
+  width: 100%;
+  max-width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin-bottom: 8mm;
+  font-size: 9pt;
+}
+
+.pdf-info-table td {
+  border: 1px solid #333;
+  padding: 2.5mm 3mm;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.pdf-info-table td:first-child {
+  font-weight: bold;
+  width: 32%;
+  background: #f3f4f6;
+}
+
+.pdf-section-title {
+  font-size: 11pt;
+  font-weight: bold;
+  margin: 6mm 0 3mm;
+  padding-bottom: 1mm;
+  border-bottom: 2px solid #111;
+}
+
+.pdf-defects-table {
+  width: 100%;
+  max-width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-size: 8pt;
+  margin-bottom: 6mm;
+}
+
+.pdf-defects-table th,
+.pdf-defects-table td {
+  border: 1px solid #333;
+  padding: 2mm 2mm;
+  vertical-align: top;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.pdf-defects-table .col-zone { width: 22%; }
+.pdf-defects-table .col-title { width: 34%; }
+.pdf-defects-table .col-status { width: 14%; }
+.pdf-defects-table .col-comment { width: 30%; }
+
+.pdf-defects-table th {
+  background: #e5e7eb;
+  font-weight: bold;
+  text-align: left;
+}
+
+.pdf-status-warn {
+  color: #a16207;
+  font-weight: bold;
+}
+
+.pdf-status-repair {
+  color: #b91c1c;
+  font-weight: bold;
+}
+
+.pdf-no-defects {
+  padding: 4mm;
+  background: #ecfdf5;
+  border: 1px solid #6ee7b7;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 6mm;
+}
+
+.pdf-notes-block {
+  margin-bottom: 6mm;
+  padding: 3mm;
+  border: 1px solid #ccc;
+  background: #fafafa;
+  font-size: 9pt;
+  white-space: pre-wrap;
+}
+
+/* Фото в PDF: 1 в ряд, пропорции из width/height атрибутов */
+.pdf-photo-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px 8px;
+  width: 100%;
+  max-width: 100%;
+  overflow: visible;
+  padding-bottom: 12mm;
+}
+
+.pdf-photo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 0;
+  text-align: center;
+  padding: 2px;
+  page-break-inside: avoid;
+  break-inside: avoid-page;
+  -webkit-column-break-inside: avoid;
+  overflow: visible;
+}
+
+.pdf-photo-item img {
+  display: block;
+  margin: 0 auto;
+  border: 1px solid #999;
+  max-width: 100%;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.pdf-photo-caption {
+  font-size: 6.5pt;
+  color: #444;
+  text-align: center;
+  margin-top: 1.5mm;
+  padding: 0 1mm;
+  line-height: 1.25;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  width: 100%;
+  max-width: 100%;
+}
+
+.pdf-footer {
+  margin-top: 10mm;
+  font-size: 8pt;
+  color: #666;
+  text-align: center;
+  border-top: 1px solid #ccc;
+  padding-top: 3mm;
+}
